@@ -23,3 +23,19 @@ body{
 .cell {
     border: 1px solid black;
 }
+
+.changeGrid {
+    margin-bottom: 10px;
+    background-color: rgb(25, 59, 2);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 12px;
+    box-shadow: 3px 3px 5px rgb(198, 198, 198);
+    color: #fff;
+    
+}
+
+.changeGrid:hover{
+    background-color: rgb(2, 113, 2);
+    cursor: pointer;
+}

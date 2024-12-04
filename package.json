@@ -10,8 +10,6 @@
   "author": "Siduduzile Snenhlanhla Mdima",
   "license": "ISC",
   "devDependencies": {
-    "jasmine": "^5.5.0",
-    "jsdom": "^25.0.1",
     "webpack-cli": "^5.1.4"
   }
 }

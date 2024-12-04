@@ -21,7 +21,6 @@ class Skecth {
   }
 
   createBody() {
-    let idx = 1;
     for (let j = 0; j < 16; j++) {
       for (let i = 0; i < 16; i++) {
         const cell = document.createElement("div");
@@ -34,7 +33,6 @@ class Skecth {
             cell.style.opacity = "50%"
         })
         this.domElement.gridContainer.appendChild(cell);
-        idx++;
       }
     }
   }
