@@ -26,10 +26,13 @@ class Skecth {
       for (let i = 0; i < 16; i++) {
         const cell = document.createElement("div");
         cell.classList.add("cell");
-        cell.addEventListener("mouseover", () => {
+        cell.addEventListener("mouseenter", () => {
             let color = this.generateColor()
             cell.style.backgroundColor = color
         });
+        cell.addEventListener("mouseleave", () => {
+            cell.style.opacity = "50%"
+        })
         this.domElement.gridContainer.appendChild(cell);
         idx++;
       }
