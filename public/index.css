@@ -39,3 +39,41 @@ body{
     background-color: rgb(2, 113, 2);
     cursor: pointer;
 }
+
+
+.setGrid {
+    display: none;
+    flex-direction: column;
+    padding: 15px 20px;
+    box-shadow: 5px 5px 10px rgb(136, 133, 133);
+    border-radius: 20px;
+    align-items: center;
+}
+
+.setUpInputRows , .setUpInputCols {
+    margin-left: 10px;
+    margin-right: 10px;
+    padding: 6px 8px;   
+    width: 100px;
+    border-radius: 10px;
+}
+
+.setUpHeader h2{
+ margin-top: 2px;
+}
+
+.setUpSubmit {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(25, 59, 2);
+    border: none;
+    padding: 9px 20px;
+    border-radius: 12px;
+    box-shadow: 3px 3px 5px rgb(198, 198, 198);
+    color: #fff
+}
+
+.setUpSubmit:hover{
+    background-color: rgb(2, 113, 2);
+    cursor: pointer;
+}

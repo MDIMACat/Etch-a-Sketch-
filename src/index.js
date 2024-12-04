@@ -1,6 +1,7 @@
 fixedAValues = {
   classes: {
     gridContainer: ".container",
+    changeButton: ".changeGrid"
   },
 };
 
@@ -18,6 +19,9 @@ class Skecth {
     this.domElement.gridContainer = document.querySelector(
       fixedAValues.classes.gridContainer
     );
+    this.domElement.changeButton = document.querySelector(
+        fixedAValues.classes.changeButton
+    )
   }
 
   createBody() {
