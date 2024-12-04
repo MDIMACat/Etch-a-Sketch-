@@ -21,11 +21,15 @@ class Skecth {
     }
 
     createBody(){
-        let square = document.createElement("div")
-        square.className = "block"
-        square.style.height = "20"
-
-        this.domElement.gridContainer.appendChild(square)
+        let idx = 1
+        for(let j = 0; j < 16; j++){
+            for(let i = 0; i < 16; i++){
+                const cell = document.createElement("div")
+                cell.classList.add("cell")
+                this.domElement.gridContainer.appendChild(cell)
+                idx++
+            }
+        }
       
     }
 
