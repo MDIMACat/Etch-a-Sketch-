@@ -1,7 +1,11 @@
 fixedAValues = {
   classes: {
     gridContainer: ".container",
-    changeButton: ".changeGrid"
+    changeButton: ".changeGrid",
+    setGrid: ".setGrid",
+    changeGrid: ".changeGrid",
+    row: ".setUpInputRows",
+    cols: ".setUpInputCols"
   },
 };
 
@@ -12,7 +16,7 @@ class Skecth {
 
   startGame() {
     this.initializeElements();
-    this.createBody();
+    this.setAGrid()
   }
 
   initializeElements() {
@@ -21,10 +25,40 @@ class Skecth {
     );
     this.domElement.changeButton = document.querySelector(
         fixedAValues.classes.changeButton
-    )
+    );
+    this.domElement.setGrid = document.querySelector(
+        fixedAValues.classes.setGrid
+    );
+    this.domElement.changeGrid = document.querySelector(
+        fixedAValues.classes.changeGrid
+    );
+    this.domElement.rows = document.querySelector(
+        fixedAValues.classes.rows
+    );
+    this.domElement.cols = document.querySelector(
+        fixedAValues.classes.cols
+    );
+  }
+
+  setAGrid(){
+    this.domElement.changeGrid.addEventListener("click", () => {
+        this.domElement.setGrid.style.display = "flex"
+
+        // Fix this function to get the input values
+        const [rows, cols] = this.getInputs()
+        console.log(`Rows ${rows}`)
+        console.log(`Cols  ${cols}`)
+    })
+  }
+
+  getInputs(){
+    const rows = this.domElement.rows.value
+    const cols = this.domElement.cols.value
+    return [rows, cols]
   }
 
   createBody() {
+    this.domElement.gridContainer.style.border = "solid"
     for (let j = 0; j < 16; j++) {
       for (let i = 0; i < 16; i++) {
         const cell = document.createElement("div");
