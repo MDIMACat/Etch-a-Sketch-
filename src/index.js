@@ -4,14 +4,17 @@ fixedAValues = {
     changeButton: ".changeGrid",
     setGrid: ".setGrid",
     changeGrid: ".changeGrid",
-    row: ".setUpInputRows",
-    cols: ".setUpInputCols"
+    rows: "#rowsValue",
+    cols: "#colsValue",
+    gridSubmit: "#submitBtn"
   },
 };
 
 class Skecth {
   constructor() {
     this.domElement = {};
+    this.cols = 0;
+    this.rows = 0;
   }
 
   startGame() {
@@ -38,29 +41,50 @@ class Skecth {
     this.domElement.cols = document.querySelector(
         fixedAValues.classes.cols
     );
+    this.domElement.gridSubmit = document.querySelector(
+      fixedAValues.classes.gridSubmit
+    )
+  }
+
+  //call this after you have set the grid on the  page
+  resetProperties(){
+    this.rows = 0
+    this.cols = 0
   }
 
   setAGrid(){
     this.domElement.changeGrid.addEventListener("click", () => {
         this.domElement.setGrid.style.display = "flex"
+        this.getValues()
+       
+    })  
+  }
 
-        // Fix this function to get the input values
-        const [rows, cols] = this.getInputs()
-        console.log(`Rows ${rows}`)
-        console.log(`Cols  ${cols}`)
+  getValues(){
+    this.domElement.gridSubmit.addEventListener("click", () => {
+      if(!this.domElement.rows.value || !this.domElement.cols.value){
+        throw new Error(`Please Enter A value`)
+      }
+
+      if(this.cols && this.rows){
+        this.cols = 0;
+        this.rows = 0
+        this.rows = this.domElement.rows.value
+        this.cols = this.domElement.cols.value
+      } 
+      this.rows = this.domElement.rows.value
+      this.cols = this.domElement.cols.value
+    
+      this.domElement.setGrid.style.display = "none"
+      this.createBody()
     })
   }
-
-  getInputs(){
-    const rows = this.domElement.rows.value
-    const cols = this.domElement.cols.value
-    return [rows, cols]
-  }
+  
 
   createBody() {
-    this.domElement.gridContainer.style.border = "solid"
-    for (let j = 0; j < 16; j++) {
-      for (let i = 0; i < 16; i++) {
+    
+    for (let j = 0; j < this.cols; j++) {
+      for (let i = 0; i < this.rows; i++) {
         const cell = document.createElement("div");
         cell.classList.add("cell");
         cell.addEventListener("mouseenter", () => {
@@ -73,6 +97,9 @@ class Skecth {
         this.domElement.gridContainer.appendChild(cell);
       }
     }
+    this.domElement.gridContainer.style.border = "solid"
+    this.domElement.gridContainer.style.gridTemplateColumns = `repeat(${this.cols} , 1fr)`
+    this.domElement.gridContainer.style.gridTemplateRows = `repeat(${this.rows} , 1fr)`
   }
 
   generateColor() {
