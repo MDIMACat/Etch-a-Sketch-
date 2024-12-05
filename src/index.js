@@ -46,7 +46,6 @@ class Skecth {
     )
   }
 
-  //call this after you have set the grid on the  page
   resetProperties(){
     this.rows = 0
     this.cols = 0
@@ -67,8 +66,7 @@ class Skecth {
       }
 
       if(this.cols && this.rows){
-        this.cols = 0;
-        this.rows = 0
+        this.resetProperties()
         this.rows = this.domElement.rows.value
         this.cols = this.domElement.cols.value
       } 
@@ -82,7 +80,11 @@ class Skecth {
   
 
   createBody() {
-    
+
+    while (this.domElement.gridContainer.firstChild) {
+      this.domElement.gridContainer.removeChild(this.domElement.gridContainer.firstChild);
+    }
+
     for (let j = 0; j < this.cols; j++) {
       for (let i = 0; i < this.rows; i++) {
         const cell = document.createElement("div");
@@ -96,8 +98,9 @@ class Skecth {
         })
         this.domElement.gridContainer.appendChild(cell);
       }
+      
     }
-    this.domElement.gridContainer.style.border = "solid"
+    this.domElement.gridContainer.style.border = "thin"
     this.domElement.gridContainer.style.gridTemplateColumns = `repeat(${this.cols} , 1fr)`
     this.domElement.gridContainer.style.gridTemplateRows = `repeat(${this.rows} , 1fr)`
   }
