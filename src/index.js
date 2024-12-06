@@ -19,7 +19,7 @@ class Skecth {
 
   startGame() {
     this.initializeElements();
-    this.setAGrid()
+    this.getValues()
   }
 
   initializeElements() {
@@ -51,13 +51,7 @@ class Skecth {
     this.cols = 0
   }
 
-  setAGrid(){
-    this.domElement.changeGrid.addEventListener("click", () => {
-        this.domElement.setGrid.style.display = "flex"
-        this.getValues()
-       
-    })  
-  }
+
 
   getValues(){
     this.domElement.gridSubmit.addEventListener("click", () => {
@@ -72,8 +66,6 @@ class Skecth {
       } 
       this.rows = this.domElement.rows.value
       this.cols = this.domElement.cols.value
-    
-      this.domElement.setGrid.style.display = "none"
       this.createBody()
     })
   }
@@ -94,7 +86,7 @@ class Skecth {
             cell.style.backgroundColor = color
         });
         cell.addEventListener("mouseleave", () => {
-            cell.style.opacity = "50%"
+            cell.style.opacity = "100%"
         })
         this.domElement.gridContainer.appendChild(cell);
       }

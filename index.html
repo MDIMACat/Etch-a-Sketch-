@@ -14,21 +14,29 @@
         <p>
             Etch-a-sketch
         </p>
+       
     </div>
-    <button class="changeGrid">Set Grid</button>
+   
 
     <div class="setGrid" id="setGrid">
         <div class="setUpHeader">
             <h2>New Grid</h2>
         </div>
         <div class="setUpInput">
+            <label for="rowsValue">Rows:</label>
             <input id="rowsValue" class="setUpInputRows" name="setUpInputRows" type="number" min="1" max="100" placeholder="Enter Row "  required>
+
+            <label for="colsValue">Columns:</label>
             <input id="colsValue" class="setUpInputCols" name="setUpInputCols" type="number" min="1" max="100" placeholder="Enter Cols" required>
             
         </div>
         <div >
             <button id="submitBtn" class="setUpSubmit" type="submit">Submit</button>
         </div>
+    </div>
+
+    <div class="clearGrid">
+        <button id="clearGridButton" type="submit">Clear Grid</button>
     </div>
 
     <div class="container" id="container"></div>
