@@ -113,7 +113,11 @@ class Skecth {
 
   clearGrid(){
     this.domElement.clearGrid.addEventListener("click", () => {
-      console.log("I should clear the screen")
+      if(this.domElement.gridContainer.hasChildNodes("cell")){
+        for(let i = 0; i < this.domElement.gridContainer.childNodes.length; i++){
+          this.domElement.gridContainer.childNodes[i].style.backgroundColor = "#fff"
+        }
+      }
     })
   }
 }

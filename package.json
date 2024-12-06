@@ -4,7 +4,6 @@
   "description": "\"Etch-a-Sketch browser game\"",
   "main": "index.js",
   "scripts": {
-    "test": "jasmine",
     "build": "webpack --config webpack.config.js"
   },
   "author": "Siduduzile Snenhlanhla Mdima",
