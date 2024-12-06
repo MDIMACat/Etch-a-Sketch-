@@ -6,7 +6,8 @@ fixedAValues = {
     changeGrid: ".changeGrid",
     rows: "#rowsValue",
     cols: "#colsValue",
-    gridSubmit: "#submitBtn"
+    gridSubmit: "#submitBtn",
+    clearGrid: "#clearGridButton"
   },
 };
 
@@ -20,6 +21,7 @@ class Skecth {
   startGame() {
     this.initializeElements();
     this.getValues()
+    this.clearGrid()
   }
 
   initializeElements() {
@@ -43,6 +45,9 @@ class Skecth {
     );
     this.domElement.gridSubmit = document.querySelector(
       fixedAValues.classes.gridSubmit
+    );
+    this.domElement.clearGrid = document.querySelector(
+      fixedAValues.classes.clearGrid
     )
   }
 
@@ -104,6 +109,12 @@ class Skecth {
       color += letters[Math.floor(Math.random() * 16)];
     }
     return color;
+  }
+
+  clearGrid(){
+    this.domElement.clearGrid.addEventListener("click", () => {
+      console.log("I should clear the screen")
+    })
   }
 }
 
