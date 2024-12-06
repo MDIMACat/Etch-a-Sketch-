@@ -32,8 +32,8 @@ Make sure you have the following installed on your system:
    ```bash
    git clone https://github.com/MDIMACat/Etch-a-Sketch-.git
    cd Etch-a-sketch-
-
    ```
+
 2. Install dependencies:
 
    ```bash
@@ -41,6 +41,21 @@ Make sure you have the following installed on your system:
    ```
 3. Run the game via the Go Live extension on vscode
 
-4. Alternative could be to run it by clicking this link: [Etch-A-Sketch]()
+4. Alternative could be to run it by clicking this link: [Etch-A-Sketch](https://mdimacat.github.io/Etch-a-Sketch-/)
 
+### How to Play 🎮
+
+1. Enter the grid size in the "New Grid" tab and click submit
+2. Use your mouse to draw on the grid.
+3. Change the grid size from the settings panel to create finer or bolder lines.
+4. Hit the "Clear Grid" button to reset the canvas.
+
+
+### Screenshots 🖼️
+ ![my screenshot](./screenshot/Screenshot%20from%202024-12-06%2020-03-27.png).
+
+
+### License 📄
+
+This project is licensed under the MIT License.
 
